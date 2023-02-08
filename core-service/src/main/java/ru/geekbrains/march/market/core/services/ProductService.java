@@ -6,7 +6,6 @@ import ru.geekbrains.march.market.api.ProductDto;
 import ru.geekbrains.march.market.core.exceptions.ResourceNotFoundException;
 import ru.geekbrains.march.market.core.entities.Product;
 import ru.geekbrains.march.market.core.repositories.ProductRepository;
-
 import java.util.List;
 import java.util.Optional;
 

@@ -1,10 +1,10 @@
 package ru.geekbrains.march.market.core.entities;
 
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -12,7 +12,8 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "orders_items")
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 public class OrderItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,4 +44,12 @@ public class OrderItem {
     @Column(name = "updated_at")
     @UpdateTimestamp
     private LocalDateTime updatedAt;
+
+    public OrderItem( Order order, Product product, BigDecimal pricePerProduct, BigDecimal price, int quantity) {
+        this.order = order;
+        this.product = product;
+        this.pricePerProduct = pricePerProduct;
+        this.price = price;
+        this.quantity = quantity;
+    }
 }
